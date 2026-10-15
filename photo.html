@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longli Lenden Ward - Tuli, Nagaland</title>
+    <style>
+        :root {
+            --primary-color: #2c5e3b; /* Forest Green representing nature & rubber farms */
+            --secondary-color: #d4a373; /* Earthy tone */
+            --accent-color: #1d3557; /* River blue */
+            --bg-color: #f9f9f6;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Dropdown Sub-menus */
+        nav ul li .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            width: 180px;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li .dropdown li {
+            padding: 0.5rem 1rem;
+            width: 100%;
+        }
+
+        nav ul li .dropdown li a {
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+
+        nav ul li:hover .dropdown {
+            display: flex;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1e3f26;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            height: 220px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation with Menus and Sub-menus -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Longli Lenden Ward</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li>
+                        <a href="#facilities">Facilities ▾</a>
+                        <ul class="dropdown">
+                            <li><a href="#facilities">Schools</a></li>
+                            <li><a href="#facilities">Fellowship</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#commercial">Hub & Nature ▾</a>
+                        <ul class="dropdown">
+                            <li><a href="#commercial">Commercial Center</a></li>
+                            <li><a href="#commercial">PWD Offices</a></li>
+                            <li><a href="#commercial">Rubber Farms</a></li>
+                            <li><a href="#commercial">Milak River</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Longli Lenden Ward</h1>
+        <p>The vibrant commercial heart of Tuli Town, Nagaland — home to 600 warm households, lush rubber farms, and the scenic Milak River.</p>
+        <a href="#about" class="btn">Explore Our Colony</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Our Colony</h2>
+        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>Longli Lenden Ward is a bustling, close-knit community comprising approximately 600 households. Serving as the primary commercial hub of Tuli town, our colony beautifully balances vibrant economic activity with peaceful natural landscapes, community fellowship, and strong traditional values.</p>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="container" style="background-color: #f1f3ee; border-radius: 12px;">
+        <h2 class="section-title">Community Facilities</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Education</h3>
+                <p>We take pride in fostering young minds with our local educational institutions, featuring <strong>one private school</strong> and <strong>one government primary school</strong> dedicated to foundational learning.</p>
+            </div>
+            <div class="card">
+                <h3>Faith & Fellowship</h3>
+                <p>Our colony fellowship serves as a peaceful sanctuary for residents to gather, worship God, strengthen community bonds, and share spiritual fellowship.</p>
+            </div>
+            <div class="card">
+                <h3>Governance</h3>
+                <p>As a central part of Tuli town, our ward hosts important administrative infrastructure, including the local <strong>PWD offices</strong> to support regional development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial & Nature Section -->
+    <section id="commercial" class="container">
+        <h2 class="section-title">Commerce & Nature</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Commercial Center</h3>
+                <p>As the main commercial center of Tuli town, our streets are lively with local businesses, shops, and daily trade serving residents and visitors alike.</p>
+            </div>
+            <div class="card">
+                <h3>Rubber Farms</h3>
+                <p>Surrounded by thriving private agricultural ventures, particularly lush rubber farms that contribute significantly to the local green economy.</p>
+            </div>
+            <div class="card">
+                <h3>Milak River Picnic Spot</h3>
+                <p>Flowing right alongside the colony, the pristine Milak River provides a popular getaway for locals and visitors looking to enjoy peaceful picnics and nature.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="container">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src= "Fellowship.jpeg"alt="Colony overview">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2026-10-12 at 10.28.49 AM.jpeg" alt="Milak River view">
+            </div>
+            <div class="gallery-item">
+                <img src="PWD Office.jpeg" alt="Rubber farm landscape">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2026-10-12 at 10.28.50 AM.jpeg" alt="Nature and greenery">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Tuli landscape">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Longli Lenden Ward, Tuli, Nagaland. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Serving ~600 Households with Pride and Unity.</p>
+    </footer>
+
+</body>
+</html>
